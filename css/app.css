@@ -1,0 +1,62 @@
+body {
+	font: 1em "Helvetica", sans-serif;
+	background-color: #edeff0;
+	margin: 0;
+}
+
+.wrapper {
+	margin: 0 auto;
+	padding: 20px;
+	width: 100%;
+	background-color: #fff;
+	max-width: 800px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5, {
+	font-weight: 200;
+}
+
+input,
+textarea {
+	font-size: inherit;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="file"],
+textarea {
+	width: 100%;
+	table-layout: fixed;
+	margin-bottom: 20px;
+}
+
+table th {
+	text-align: left;
+}
+
+.faded {
+	color: #bbb;
+}
+
+.error {
+	color: #D8000C;
+    background-color: #FFBABA;
+}
+
+.info {
+	color: #00529B;
+    background-color: #BDE5F8;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.small {
+	font-size: 10px;
+}
