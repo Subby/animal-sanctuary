@@ -1,4 +1,5 @@
 <?php 
 require("app/start.php");
 session_start();
-echo "hey";
+$title = "Home";
+require VIEW_ROOT . 'home.php';

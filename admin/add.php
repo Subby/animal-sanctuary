@@ -53,7 +53,7 @@ if(isset($_POST["submitted"])) {
 		'name' => $name,
 		'date' => $date,
 		'desc' => $desc,
-		'photo' => $encoded_file.$extention,
+		'photo' => $encoded_file.".".$extention,
 		'type' => $type	
 	]);
 
