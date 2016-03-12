@@ -60,3 +60,7 @@ table th {
 .small {
 	font-size: 10px;
 }
+
+.center {
+	margin: 0 auto;
+}
