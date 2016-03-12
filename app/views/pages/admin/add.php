@@ -16,19 +16,19 @@
 	<form action="add.php" enctype="multipart/form-data" method="POST" autocomplete="off">
 		<label for="name" class="bold"> 
 			Name
-			<input type="text" name="name" id="name"/>
+			<input type="text" name="name" id="name" value="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>"/>
 		</label>
 		<label for="date" class="bold"> 
 			Date of Birth <br/>
-			<input type="date" name="date" id="date"/><br/>
+			<input type="date" name="date" id="date" value="<?php if(isset($_POST['date'])) echo $_POST['date']; ?>"/><br/>
 		</label>
 		<label for="type" class="bold"> 
 			Type
-			<input type="text" name="type" id="type"/>
+			<input type="text" name="type" id="type" value="<?php if(isset($_POST['type'])) echo $_POST['type']; ?>"/>
 		</label>			
 		<label for="desc" class="bold"> 
 			Description
-			<textarea name="desc" id="desc" cols="30" rows="10"/></textarea>
+			<textarea name="desc" id="desc" cols="30" rows="10"/><?php if(isset($_POST['desc'])) echo $_POST['desc']; ?></textarea>
 		</label>
 		<label for="photo" class="bold"> 
 			Photo <span class="small">(only jpg/png/gif are allowed)</span>

@@ -15,7 +15,7 @@ if(isset($_POST['submitted'])) {
 	}
 
 	if(strlen($username) > 12) {
-		$errors[] = "Please ensure that your password is 12 or less characters";
+		$errors[] = "Please ensure that your username is 12 or less characters";
 	}
 
 	if(strlen($password) < 6) {
@@ -36,8 +36,8 @@ if(isset($_POST['submitted'])) {
 		'password' => $password,
 		'username' => $username	
 	]);	
-	echo "You have sucessfully registered, you may login <a href=\"login.php\">here<\a>.";
-	die();
+	echo "You have sucessfully registered, you may login <a href=\"login.php\">here</a>.";
+	exit();
 } else {
 	require VIEW_ROOT . 'register.php';
 }

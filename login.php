@@ -6,7 +6,9 @@ if(isset($_SESSION["id"])) {
 	//header("Location: loggedin.php");
 	echo "logged in fam<br/>";
 	echo "id: " . $_SESSION["id"] . "<br/>";
-	echo "admin: " . $_SESSION["admin"];
+	if(isset($_SESSION["admin"])) {
+		echo "admin: " . $_SESSION["admin"];
+	}
 	exit();
 }
 if(isset($_POST['submitted'])) {
@@ -49,6 +51,7 @@ if(isset($_POST['submitted'])) {
 			$_SESSION["admin"] = true;
 			echo "yup";
 		}
+		echo "hi";
 		
 	}
 

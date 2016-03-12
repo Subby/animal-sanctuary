@@ -14,11 +14,11 @@
 	<h2><?php echo $title; ?></h2>
 	<form action="register.php" method="post">
 		<label for="username"> 
-			Name
-			<input type="text" name="username" id="username"/>
+			Username <span class="small">(12 characters or less)</span>
+			<input type="text" name="username" id="username" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>"/>
 		</label>		
 		<label for="password"> 
-			Password
+			Password <span class="small">(6 characters or more)</span>
 			<input type="password" name="password" id="password"/>
 		</label>			
 		<input type="submit"/>
