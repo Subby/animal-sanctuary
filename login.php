@@ -36,7 +36,7 @@ if(isset($_POST['submitted'])) {
 
 	$findUser->execute([
 		'username' => $username,
-		'password' => $password	
+		'password' => md5($password)	
 	]);
 
 	$findUser = $findUser->fetch(PDO::FETCH_ASSOC);

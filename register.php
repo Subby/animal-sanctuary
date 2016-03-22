@@ -33,7 +33,7 @@ if(isset($_POST['submitted'])) {
 		");
 
 	$insertUser->execute([
-		'password' => $password,
+		'password' => md5($password),
 		'username' => $username	
 	]);	
 	echo "You have sucessfully registered, you may login <a href=\"login.php\">here</a>.";
