@@ -1,7 +1,7 @@
 <?php
+require('../app/start.php');
 if(isset($_GET['id'])) {
 
-	require('../app/start.php');
 	$id = $_GET['id'];
 
 	$animal = $db->prepare("

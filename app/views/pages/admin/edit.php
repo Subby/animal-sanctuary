@@ -1,5 +1,5 @@
 <?php require(VIEW_ROOT . '../templates/header.php'); ?>
-
+	<?php if($animal): ?>
 	<h2>Edit <?php echo escape($animal['name']); ?></h2>
 
 	<form action="add.php" enctype="multipart/form-data" method="POST" autocomplete="off">
@@ -26,5 +26,8 @@
 		<input type="hidden" name="submitted" value="true"/>		
 		<input type="submit" value="Submit"/>	
 	</form>
+	<?php else: ?>
+		<p>No animal found, sorry.</p>
+	<?php endif; ?>
 
 <?php require(VIEW_ROOT . '../templates/footer.php'); ?>
