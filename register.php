@@ -27,10 +27,24 @@ if(isset($_POST['submitted'])) {
 		$errors[] = "Please ensure that your password has 6 or more characters.";
 	}
 
+	$findUser = $db->prepare("
+		SELECT * FROM user 
+		WHERE username = :username
+	");
+
+	$findUser->execute([
+		'username' => $username	
+	]);
+
+	if($findUser) {
+		$errors[] = "That username already exists, please choose another one.";
+	} 
+
 	if(isset($errors) && count($errors) > 0) {
 		require VIEW_ROOT . 'register.php';
 		exit();
 	}
+
 
 	$insertUser = $db->prepare("
 		INSERT INTO user (password, username)
