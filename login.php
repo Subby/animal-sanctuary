@@ -3,12 +3,7 @@ $title = "Login";
 require("app/start.php");
 session_start();
 if(isset($_SESSION["id"])) {
-	//header("Location: loggedin.php");
-	echo "logged in fam<br/>";
-	echo "id: " . $_SESSION["id"] . "<br/>";
-	if(isset($_SESSION["admin"])) {
-		echo "admin: " . $_SESSION["admin"];
-	}
+	header("Location: index.php");
 	exit();
 }
 if(isset($_POST['submitted'])) {
