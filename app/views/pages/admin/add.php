@@ -32,7 +32,7 @@
 		</label>				
 		<label for="desc" class="bold"> 
 			Description <span class="red">*</span>
-			<textarea name="desc" id="desc" cols="30" rows="10"/><?php if(isset($_POST['desc'])) echo escape($_POST['desc']); ?></textarea>
+			<textarea name="desc" id="desc" cols="30" rows="10"/ required><?php if(isset($_POST['desc'])) echo escape($_POST['desc']); ?></textarea>
 		</label>
 		<label for="photo" class="bold"> 
 			Photo <span class="red">*</span> <span class="small">(only jpg/png/gif are allowed)</span>
