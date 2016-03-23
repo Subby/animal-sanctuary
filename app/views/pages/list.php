@@ -25,7 +25,7 @@
 					<td><a href="view.php?id=<?php echo $animal['animalID']; ?>"><?php echo escape($animal	['name']); ?></a></td>
 					<td><?php echo $date; ?></td>
 					<td><?php echo escape($animal['type']); ?></td>
-					<td>Lulz</td>
+					<td><?php echo escape($animal['breed']); ?></td>
 					<td><img src="images/<?php echo $animal['photo']; ?>" width="50" height="50"/></td>
 
 				</tr>

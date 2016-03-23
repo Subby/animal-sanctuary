@@ -12,9 +12,14 @@ if(isset($_POST["submitted"])) {
 	$date = $_POST['date'];
 	$type = $_POST['type'];
 	$desc = $_POST['desc'];
+	$breed = $_POST['breed'];
 
 	if(check_empty($name) || check_empty($date) || check_empty($type) || check_empty($desc)) {
 		$errors[] = "Please ensure you have filled in all the form values.";
+	}
+
+	if(check_empty($breed)) {
+		$breed = "N/A";
 	}
 	
 	$formatted_date = new DateTime($date);
@@ -45,8 +50,8 @@ if(isset($_POST["submitted"])) {
 
 
 	$insertAnimal = $db->prepare("
-		INSERT INTO animal (name, dateofbirth, description, photo, type)
-		VALUES(:name, :date, :desc, :photo, :type)
+		INSERT INTO animal (name, dateofbirth, description, photo, type, breed)
+		VALUES(:name, :date, :desc, :photo, :type, :breed)
 	");
 
 	$insertAnimal->execute([
@@ -54,7 +59,8 @@ if(isset($_POST["submitted"])) {
 		'date' => $date,
 		'desc' => $desc,
 		'photo' => $encoded_file.".".$extention,
-		'type' => $type	
+		'type' => $type,
+		'breed' => $breed
 	]);
 
 	if($insertAnimal) {

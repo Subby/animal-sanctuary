@@ -12,26 +12,30 @@
 		}	
 	?>	
 	<h2><?php echo $title; ?></h2>
-
+	<h5>Fields marked with a <span class="red">*</span> (red astrix) are required.</h5>
 	<form action="add.php" enctype="multipart/form-data" method="POST" autocomplete="off">
 		<label for="name" class="bold"> 
-			Name
+			Name <span class="red">*</span>
 			<input type="text" name="name" id="name" value="<?php if(isset($_POST['name'])) echo escape($_POST['name']); ?>" required />
 		</label>
 		<label for="date" class="bold"> 
-			Date of Birth <br/>
+			Date of Birth <span class="red">*</span> <br/>
 			<input type="date" name="date" id="date" value="<?php if(isset($_POST['date'])) echo $_POST['date']; ?>" required /><br/>
 		</label>
 		<label for="type" class="bold"> 
-			Type
+			Type <span class="red">*</span>
 			<input type="text" name="type" id="type" value="<?php if(isset($_POST['type'])) echo escape($_POST['type']); ?>" required />
-		</label>			
+		</label>	
+		<label for="breed" class="bold"> 
+			Breed
+			<input type="text" name="breed" id="breed" value="<?php if(isset($_POST['breed'])) echo escape($_POST['breed']); ?>" />
+		</label>				
 		<label for="desc" class="bold"> 
-			Description
+			Description <span class="red">*</span>
 			<textarea name="desc" id="desc" cols="30" rows="10"/><?php if(isset($_POST['desc'])) echo escape($_POST['desc']); ?></textarea>
 		</label>
 		<label for="photo" class="bold"> 
-			Photo <span class="small">(only jpg/png/gif are allowed)</span>
+			Photo <span class="red">*</span> <span class="small">(only jpg/png/gif are allowed)</span>
 			<input type="file" name="photo" id="photo" required/>
 		</label>	
 		<input type="hidden" name="submitted" value="true"/>		

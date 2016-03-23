@@ -7,7 +7,7 @@
 		<p><img src="images/<?php echo $animal['photo']; ?>" width="100" height="100"/></p>
 		<p class="faded"><span class="bold">Born: </span><?php echo $date; ?></p>
 		<p class="faded"><span class="bold">Type: </span><?php echo escape($animal['type']); ?></p>
-		<p class="faded"><span class="bold">Breed: </span>Squa</p>
+		<p class="faded"><span class="bold">Breed: </span><?php echo escape($animal['breed']); ?></p>
 	<?php else: ?>
 		<p>No animal found, sorry.</p>
 	<?php endif; ?>
