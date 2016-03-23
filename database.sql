@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `animal` (
   `photo` text NOT NULL,
   `available` tinyint(1) NOT NULL DEFAULT '1',
   `type` varchar(225) NOT NULL,
+  `breed` varchar(225) NOT NULL DEFAULT 'N/A',
   PRIMARY KEY (`animalID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
