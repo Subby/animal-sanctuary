@@ -63,12 +63,21 @@ if(isset($_POST["submitted"])) {
 		'breed' => $breed
 	]);
 
-	if($insertAnimal) {
+	$insertOwnership = $db->prepare("
+		INSERT INTO owns (userID, animalID)
+		VALUES(:userID, :animalID)
+	");
+
+	$insertOwnership->execute([
+		'userID' => $_SESSION["id"],
+		'animalID' => $db->lastInsertId()
+	]);	
+
+	if($insertAnimal && $insertOwnership) {
 		echo "Sucessfully added!";
 		exit();
 	} else {
-		print_r($insertAnimal);
-		die("Error!");
+		die("Sorry, an error has occured.");
 		exit();
 	}
 } else {
