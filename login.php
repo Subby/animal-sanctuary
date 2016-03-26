@@ -46,7 +46,8 @@ if(isset($_POST['submitted'])) {
 			$_SESSION["admin"] = true;
 			echo "yup";
 		}
-		echo "hi";
+		header("Location: index.php");
+		exit();
 		
 	}
 

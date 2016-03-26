@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+if(!isset($_SESSION["id"])) {
+	header("Location: login.php");
+	exit();
+}
 require 'app/start.php';
 
 if(empty($_GET['id'])) {
