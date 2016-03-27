@@ -12,7 +12,7 @@
 			<ul>
 				<?php
 					foreach ($owns_assoc as $animal) {
-						echo "<li><a href=\"view.php?id=".$animal['animalID']."\">".$animal['name']."</a></li>";
+						echo "<li><a href=\"view.php?id=".$animal['animalID']."\">".escape($animal['name'])."</a></li>";
 					}				
 				?>
 			</ul>
@@ -32,7 +32,7 @@
 			<tbody>
 				<?php foreach($requests_assoc as $request): ?>
 					<tr>
-						<td><a href="view.php?id="<?php echo $request['animalID'];?>><?php echo $request['name'];?></a></td>
+						<td><a href="view.php?id="<?php echo $request['animalID'];?>><?php echo escape($request['name']);?></a></td>
 						<td><?php 
 						if($request['approved'] == 1) {
 							echo "Approved";
