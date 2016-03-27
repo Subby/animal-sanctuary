@@ -21,7 +21,7 @@
 			<tbody>
 				<?php foreach($requests as $request): ?>
 					<td><?php echo $request['adoptionID'];?></td>
-					<td><?php echo $request['name'];?></td>
+					<td><a href="../view.php?id=<?php echo $request['animalID'];?>"><?php echo $request['name'];?></a></td>
 					<td><?php echo $request['username'];?></td>
 					<td><?php 
 						if($request['approved'] == 1) {
