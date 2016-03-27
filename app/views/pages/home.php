@@ -20,7 +20,7 @@
 		<p>You have no owned animals.</p>
 	<?php endif; ?>
 
-	<?php if($requests): ?>
+	<?php if($requests_assoc): ?>
 		<p>Below are all the adoption requests you have submitted:</p>
 			<table class="center simpleTable">
 			<thead>

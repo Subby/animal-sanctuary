@@ -29,6 +29,4 @@ $requests->execute(['uid' => $_SESSION["id"]]);
 
 $requests_assoc = $requests->fetchAll(PDO::FETCH_ASSOC);
 
-print_r($requests_assoc);
-
 require VIEW_ROOT . 'home.php';
