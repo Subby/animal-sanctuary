@@ -8,20 +8,35 @@
 </script>	
 	<p>Hello and welcome to the animal sanctuary website.</p>
 	<?php if($owns_assoc): ?>
-		<p>Below are all the animals you own:</p>
-			<ul>
-				<?php
-					foreach ($owns_assoc as $animal) {
-						echo "<li><a href=\"view.php?id=".$animal['animalID']."\">".escape($animal['name'])."</a></li>";
-					}				
-				?>
-			</ul>
+		<p>Below are all the animals you own <span class="small">(click on the table headers to sort)</span>:</p>
+		<table class="center simpleTable">
+			<thead>
+				<tr>
+					<th data-sort="string">Name</th>
+					<th data-sort="int">Age</th>
+					<th>Image</th>
+				</tr>
+			</thead>	
+			<tbody>
+			<?php foreach($owns_assoc as $animal): 
+			$date = date_create($animal['dateofbirth']);
+			$date_now = new DateTime();
+			$age = $date_now->diff($date);
+			?>
+				<tr>
+					<td><a href="view.php?id=<?php echo $animal['animalID']; ?>"><?php echo escape($animal['name']); ?></a></td>
+					<td data-sort-value="<?php echo $date->format('U')?>"><?php echo $age->format('%y year(s) %m month(s)'); ?></td>
+					<td><img src="images/<?php echo $animal['photo']; ?>" width="50" height="50"/></td>
+				</tr>
+			<?php endforeach; ?>
+			</tbody>	
+		</table>
 	<?php else: ?>
 		<p>You have no owned animals.</p>
 	<?php endif; ?>
 
 	<?php if($requests_assoc): ?>
-		<p>Below are all the adoption requests you have submitted:</p>
+		<p>Below are all the adoption requests you have submitted <span class="small">(click on the table headers to sort)</span>:</p>
 			<table class="center simpleTable">
 			<thead>
 				<tr>
