@@ -1,21 +1,31 @@
 <?php require(VIEW_ROOT . '../templates/header.php'); ?>
-	<p>Type in the required values in the following text fields to find a matching animal</p>
+	<p>Type in/select the required values in the following text fields to find a matching animal</p>
 	<form action="search.php" method="POST">
 		<label for="name"> 
 			Name
-			<input type="text" name="name" id="name" value="<?php if(isset($_POST['name'])) echo escape($_POST['name']); ?>" />
+			<input type="text" name="name" id="name"/>
 		</label>	
 		<label for="age"> 
 			Age
-			<input type="text" name="age" id="age" value="<?php if(isset($_POST['age'])) echo escape($_POST['age']); ?>" />
-		</label>	
+			<input type="text" name="age" id="age"/>
+		</label>
+		<?php if(!empty($types)): ?>	
+
+		<?php endif; ?>
 		<label for="type"> 
-			Type
-			<input type="text" name="type" id="type" value="<?php if(isset($_POST['type'])) echo escape($_POST['type']); ?>" />
+			Type</br>
+			<select>
+				<option value="-">-</option>			
+				<?php foreach($types as $type): ?>
+					<option value="<?php echo escape($type['type']); ?>"><?php echo escape($type['type']); ?></option>
+				<?php endforeach; ?>
+			</select>
+			</br>
+			</br>
 		</label>
 		<label for="breed"> 
 			Breed
-			<input type="text" name="breed" id="breed" value="<?php if(isset($_POST['breed'])) echo escape($_POST['breed']); ?>" />
+			<input type="text" name="breed" id="breed" />
 		</label>		
 		<input type="hidden" name="submitted" value="true"/>
 		<input type="submit"/>

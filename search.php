@@ -9,4 +9,10 @@ $title = "Search";
 if(isset($_POST['submitted'])) {
 
 }
+
+$types = $db->query("
+	SELECT DISTINCT type
+	FROM animal
+	")->fetchAll(PDO::FETCH_ASSOC);
+
 require VIEW_ROOT . 'search.php';
