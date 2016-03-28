@@ -1,6 +1,6 @@
 <?php require(VIEW_ROOT . '../templates/header.php'); ?>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/stupidtable.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/stupidtable.js"></script>
 <script type="text/javascript">    
 	$(function(){
 	        $("table").stupidtable();
@@ -15,11 +15,12 @@
 					<th data-sort="string">Animal Name</th>
 					<th data-sort="string">Made By</th>
 					<th data-sort="string">Status</th>
-					<th>
+					<th>Approve/Deny</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach($requests as $request): ?>
+					<tr>
 					<td><?php echo $request['adoptionID'];?></td>
 					<td><a href="../view.php?id=<?php echo $request['animalID'];?>"><?php echo $request['name'];?></a></td>
 					<td><?php echo $request['username'];?></td>
@@ -33,6 +34,8 @@
 						}
 						?>
 					</td>
+					<td><a href="">Approve</a> <a href="">Deny</a></td>
+					</tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>		
