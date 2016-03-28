@@ -20,7 +20,9 @@ if(isset($_POST["submitted"])) {
 		'aid' => $animalID	
 	]);
 
-	if($exists) {
+	$exists_check = $exists->fetchAll(PDO::FETCH_ASSOC);
+
+	if($exists_check) {
 		echo "You have already submitted an adoption request for this animal.<br/>";
 		echo "Click <a href=\"index.php\">here</a> to go back to the home page.";
 		exit();
