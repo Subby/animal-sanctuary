@@ -11,7 +11,7 @@
 		<table class="center simpleTable">
 			<thead>
 				<tr>
-					<th data-sort="integer">ID</th>
+					<th data-sort="int">ID</th>
 					<th data-sort="string">Animal Name</th>
 					<th data-sort="string">Made By</th>
 					<th data-sort="string">Status</th>
