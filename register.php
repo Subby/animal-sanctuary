@@ -20,7 +20,11 @@ if(isset($_POST['submitted'])) {
 	}
 
 	if(strlen($username) > 12) {
-		$errors[] = "Please ensure that your username is 12 or less characters";
+		$errors[] = "Please ensure that your username is 12 or less characters.";
+	}
+
+	if(preg_match("/\s/", $username) > 0) {
+		$errors[] = "Please ensure you have no spaces in your username.";
 	}
 
 	if(strlen($password) < 6) {
@@ -36,7 +40,9 @@ if(isset($_POST['submitted'])) {
 		'username' => $username	
 	]);
 
-	if($findUser) {
+	$query = $findUser->fetchAll(PDO::FETCH_ASSOC);
+
+	if($query) {
 		$errors[] = "That username already exists, please choose another one.";
 	} 
 
