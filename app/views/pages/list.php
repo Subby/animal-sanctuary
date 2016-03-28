@@ -7,11 +7,12 @@
 	    });
 </script>
 	<?php if($animals): ?>
+		<p>Click on the table headers to sort.</p>
 		<table class="center simpleTable">
 			<thead>
 				<tr>
 					<th data-sort="string">Name</th>
-					<th data-sort="date">Born</th>
+					<th data-sort="int">Age</th>
 					<th data-sort="string">Type</th>
 					<th data-sort="string">Breed</th>
 					<th>Image</th>
@@ -19,11 +20,13 @@
 			</thead>
 			<tbody>
 			<?php foreach($animals as $animal): 
-			$date = date_create($animal['dateofbirth'])->format('d-m-Y');
+			$date = date_create($animal['dateofbirth']);
+			$date_now = new DateTime();
+			$age = $date_now->diff($date);
 			?>
 				<tr>					
 					<td><a href="view.php?id=<?php echo $animal['animalID']; ?>"><?php echo escape($animal	['name']); ?></a></td>
-					<td><?php echo $date; ?></td>
+					<td data-sort-value="<?php echo $date->format('U')?>"><?php echo $age->format('%y year(s) %m month(s)'); ?></td>
 					<td><?php echo escape($animal['type']); ?></td>
 					<td><?php echo escape($animal['breed']); ?></td>
 					<td><img src="images/<?php echo $animal['photo']; ?>" width="50" height="50"/></td>
