@@ -6,7 +6,7 @@
 			<input type="text" name="name" id="name"/>
 		</label>	
 		<label for="age"> 
-			Age
+			Age <span class="small">(in years)</span>
 			<input type="text" name="age" id="age"/>
 		</label>
 		<?php if(!empty($types)): ?>	
@@ -14,7 +14,7 @@
 		<?php endif; ?>
 		<label for="type"> 
 			Type</br>
-			<select>
+			<select name="type">
 				<option value="-">-</option>			
 				<?php foreach($types as $type): ?>
 					<option value="<?php echo escape($type['type']); ?>"><?php echo escape($type['type']); ?></option>
