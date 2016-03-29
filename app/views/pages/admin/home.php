@@ -69,7 +69,7 @@
 					<td><?php echo escape($animal['type']); ?></td>
 					<td><?php echo escape($animal['breed']); ?></td>
 					<td><img src="../images/<?php echo $animal['photo']; ?>" width="50" height="50"/></td>
-					<td><a href="edit.php?id=<?php echo $animal['animalID']; ?>">Edit</td>
+					<td><a href="edit.php?id=<?php echo $animal['animalID']; ?>">Edit</a></td>
 
 				</tr>
 			<?php endforeach; ?>	
