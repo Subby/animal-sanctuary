@@ -2,8 +2,8 @@
 
 require '../app/start.php';
 session_start();
-if(!isset($_SESSION["id"])) {
-	header("Location: login.php");
+if(!isset($_SESSION["id"]) || !isset($_SESSION["admin"])) {
+	echo "<h1>403 Forbidden</h1>";
 	exit();
 }
 $title = "All animals in the system";

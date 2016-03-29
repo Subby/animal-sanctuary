@@ -17,6 +17,7 @@
 					<th data-sort="string">Type</th>
 					<th data-sort="string">Breed</th>
 					<th>Image</th>
+					<th>Adopt</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -31,6 +32,7 @@
 					<td><?php echo escape($animal['type']); ?></td>
 					<td><?php echo escape($animal['breed']); ?></td>
 					<td><img src="images/<?php echo $animal['photo']; ?>" width="50" height="50"/></td>
+					<td><a href="adopt.php?id=<?php echo $animal['animalID']; ?>">Adopt</a></td>
 
 				</tr>
 			<?php endforeach; ?>	

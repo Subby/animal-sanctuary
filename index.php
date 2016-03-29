@@ -5,6 +5,10 @@ if(!isset($_SESSION["id"])) {
 	header("Location: login.php");
 	exit();
 }
+if(isset($_SESSION["admin"])) {
+	header("Location: admin");
+	exit();
+}
 $title = "Home";
 
 $owns = $db->prepare("

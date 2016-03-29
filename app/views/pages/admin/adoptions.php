@@ -15,14 +15,13 @@
 					<th data-sort="string">Animal Name</th>
 					<th data-sort="string">Made By</th>
 					<th data-sort="string">Status</th>
-					<th>Approve/Deny</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach($requests as $request): ?>
 					<tr>
 					<td><?php echo $request['adoptionID'];?></td>
-					<td><a href="../view.php?id=<?php echo $request['animalID'];?>"><?php echo $request['name'];?></a></td>
+					<td><a href="../view.php?id=<?php echo $request['animalID'];?>"><?php echo escape($request['name']);?></a></td>
 					<td><?php echo $request['username'];?></td>
 					<td><?php 
 						if($request['approved'] == 1) {
@@ -34,7 +33,6 @@
 						}
 						?>
 					</td>
-					<td><a href="">Approve</a> <a href="">Deny</a></td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
