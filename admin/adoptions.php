@@ -29,7 +29,7 @@ if(isset($_GET["id"]) && isset($_GET['m']) && isset($_GET['aid']) && isset($_GET
 		$updateRequest = $db->prepare("
 			UPDATE adoptionrequest
 			SET approved = 1
-			WHERE adoptonID = :id
+			WHERE adoption = :id
 			");	
 		$updateRequest->execute([
 			'id' => $id
