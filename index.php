@@ -10,7 +10,7 @@ if(isset($_SESSION["admin"])) {
 	exit();
 }
 $title = "Home";
-
+//Find all the animals that the user owns
 $owns = $db->prepare("
 	SELECT * FROM owns
 	LEFT JOIN animal
@@ -21,7 +21,7 @@ $owns = $db->prepare("
 $owns->execute(['uid' => $_SESSION["id"]]);
 
 $owns_assoc = $owns->fetchAll(PDO::FETCH_ASSOC);
-
+//Find all the adoption requests that the user made
 $requests = $db->prepare("
 	SELECT * FROM adoptionrequest
 	LEFT JOIN animal

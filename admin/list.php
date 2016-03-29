@@ -7,12 +7,12 @@ if(!isset($_SESSION["id"]) || !isset($_SESSION["admin"])) {
 	exit();
 }
 $title = "All animals in the system";
-
+//Get all the animals
 $animals = $db->query("
 	SELECT *
 	FROM animal
 	")->fetchAll(PDO::FETCH_ASSOC);
-
+//Get all the owned animals along with their owner
 $owned_animals = $db->query("
 	SELECT *
 	FROM owns

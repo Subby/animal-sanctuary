@@ -9,7 +9,7 @@ if(isset($_SESSION["id"])) {
 if(isset($_POST['submitted'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
+	//Validation
 	if(check_empty($username)) {
 		$errors[] = "Please ensure you have filled in the username field.";
 	}	
@@ -22,7 +22,7 @@ if(isset($_POST['submitted'])) {
 		require VIEW_ROOT . 'login.php';
 		exit();
 	}	
-
+	//Check if correct
 	$findUser = $db->prepare("
 		SELECT * FROM user 
 		WHERE username = :username
@@ -44,7 +44,6 @@ if(isset($_POST['submitted'])) {
 		$_SESSION["id"] = $findUser["userID"];
 		if($findUser["staff"] == 1) {
 			$_SESSION["admin"] = true;
-			echo "yup";
 		}
 		header("Location: index.php");
 		exit();

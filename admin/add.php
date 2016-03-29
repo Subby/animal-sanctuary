@@ -14,6 +14,7 @@ if(isset($_POST["submitted"])) {
 	$desc = $_POST['desc'];
 	$breed = $_POST['breed'];
 
+	//Validation
 	if(check_empty($name) || check_empty($date) || check_empty($type) || check_empty($desc)) {
 		$errors[] = "Please ensure you have filled in all the form values.";
 	}
@@ -48,7 +49,7 @@ if(isset($_POST["submitted"])) {
 	}
 
 
-
+	//Insert the animal into the database
 	$insertAnimal = $db->prepare("
 		INSERT INTO animal (name, dateofbirth, description, photo, type, breed)
 		VALUES(:name, :date, :desc, :photo, :type, :breed)
@@ -63,6 +64,7 @@ if(isset($_POST["submitted"])) {
 		'breed' => $breed
 	]);
 
+	//Insert default owner as admin
 	$insertOwnership = $db->prepare("
 		INSERT INTO owns (userID, animalID)
 		VALUES(:userID, :animalID)

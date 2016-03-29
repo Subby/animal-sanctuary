@@ -1,4 +1,4 @@
-<?php require(VIEW_ROOT . '../templates/header.php'); ?>
+<?php require(VIEW_ROOT . '../templates/header_admin.php');  ?>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/stupidtable.js"></script>
 <script type="text/javascript">    
@@ -17,6 +17,7 @@
 					<th data-sort="string">Type</th>
 					<th data-sort="string">Breed</th>
 					<th>Image</th>
+					<th>Edit</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -31,7 +32,7 @@
 					<td><?php echo escape($animal['type']); ?></td>
 					<td><?php echo escape($animal['breed']); ?></td>
 					<td><img src="../images/<?php echo $animal['photo']; ?>" width="50" height="50"/></td>
-
+					<td><a href="edit.php?id=<?php echo $animal['animalID']; ?>">Edit</td>
 				</tr>
 			<?php endforeach; ?>	
 			</tbody>

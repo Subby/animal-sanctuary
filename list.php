@@ -7,7 +7,7 @@ if(!isset($_SESSION["id"])) {
 	exit();
 }
 $title = "Animals Available For Adoption";
-
+//Find all the animals who are available for adoption
 $animals = $db->query("
 	SELECT *
 	FROM animal

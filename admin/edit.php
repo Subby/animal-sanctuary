@@ -13,7 +13,7 @@ if(!empty($_POST)) {
 	$desc = $_POST['desc'];
 	$breed = $_POST['breed'];
 	$id = $_POST['id'];
-
+	//Setup array for easier access
 	$animal = array(
 		"name" => $name,
 		"dateofbirth" => $date,
@@ -57,7 +57,7 @@ if(!empty($_POST)) {
 		require(VIEW_ROOT . 'admin/edit.php');
 		exit();
 	}
-
+	//Update image name with the query
 	if($file_changed) {
 		$updateAnimal = $db->prepare("
 			UPDATE animal 
@@ -84,6 +84,7 @@ if(!empty($_POST)) {
 			die('Sucessfully edited '. escape($name));
 		}
 	} else {
+		//No image name update with this query
 		$updateAnimal = $db->prepare("
 			UPDATE animal 
 			SET

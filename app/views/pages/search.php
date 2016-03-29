@@ -1,4 +1,11 @@
-<?php require(VIEW_ROOT . '../templates/header.php'); ?>
+<?php
+if(isset($_SESSION["admin"])) {
+require(VIEW_ROOT . '../templates/header_admin.php'); 
+} else {
+require(VIEW_ROOT . '../templates/header.php'); 	
+}
+?>
+
 	<p>Type in/select the required values in the following text fields to find a matching animal</p>
 	<form action="search.php" method="POST">
 		<label for="name"> 

@@ -1,4 +1,4 @@
-<?php require(VIEW_ROOT . '../templates/header.php'); ?>
+<?php require(VIEW_ROOT . '../templates/header_admin.php');  ?>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/stupidtable.js"></script>
 <script type="text/javascript">    

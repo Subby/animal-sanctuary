@@ -11,9 +11,10 @@
 	<h1>Animal Sanctuary</h1>
 	<ul id="navbar">
 	  <li><a href="index.php">Home</a></li>
-	  <li><a href="register.php">Register</a></li>
-	  <li><a href="list.php">View Adoptable Animals</a></li>
-	  <li><a href="search.php">Search</a></li>
-	  <li><a href="logout.php">Logout</a></li>	  
+	  <li><a href="add.php">Add New Animal</a></li>
+	  <li><a href="list.php">View All Animals and Owned Animals</a></li>	  
+	  <li><a href="adoption.php">View All Adoptions</a></li>
+	  <li><a href="../search.php">Search</a></li>
+	  <li><a href="../logout.php">Logout</a></li>	  
 	</ul>	
 		

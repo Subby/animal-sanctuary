@@ -10,7 +10,7 @@ if(isset($_POST['submitted'])) {
 
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
+	//Validation
 	if(check_empty($username)) {
 		$errors[] = "Please ensure you have filled in the username field.";
 	}	
@@ -30,7 +30,7 @@ if(isset($_POST['submitted'])) {
 	if(strlen($password) < 6) {
 		$errors[] = "Please ensure that your password has 6 or more characters.";
 	}
-
+	//Check if user already exists
 	$findUser = $db->prepare("
 		SELECT * FROM user 
 		WHERE username = :username
@@ -51,7 +51,7 @@ if(isset($_POST['submitted'])) {
 		exit();
 	}
 
-
+	//Insert user into the database
 	$insertUser = $db->prepare("
 		INSERT INTO user (password, username)
 		VALUES(:password, :username)

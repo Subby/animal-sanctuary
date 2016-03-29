@@ -1,4 +1,4 @@
-<?php require(VIEW_ROOT . '../templates/header.php'); 
+<?php require(VIEW_ROOT . '../templates/header_admin.php'); 
 
 		if(isset($errors) && count($errors) > 0) {
 			echo "<div class=\"error\">";

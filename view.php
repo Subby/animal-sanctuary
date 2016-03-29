@@ -11,7 +11,7 @@ if(empty($_GET['id'])) {
 	$title = "Animal Not Found";
 } else {
 	$id = $_GET['id'];
-
+	//Find the animal
 	$animal = $db->prepare("
 		SELECT *
 		FROM animal

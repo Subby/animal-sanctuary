@@ -14,6 +14,7 @@ if(isset($_GET["id"]) && isset($_GET['m']) && isset($_GET['aid']) && isset($_GET
 	$uid = $_GET['uid'];
 
 	if($manage == 1) {
+		//Update animal available status
 		$updateAnimal = $db->prepare("
 			UPDATE animal 
 			SET
@@ -24,6 +25,7 @@ if(isset($_GET["id"]) && isset($_GET['m']) && isset($_GET['aid']) && isset($_GET
 			'aid' => $aid
 		]);
 
+		//Update adoption request to approved
 		$updateRequest = $db->prepare("
 			UPDATE adoptionrequest
 			SET approved = 1
@@ -33,6 +35,7 @@ if(isset($_GET["id"]) && isset($_GET['m']) && isset($_GET['aid']) && isset($_GET
 			'id' => $id
 		]);		
 
+		//Update other adoption requests to disapproved
 		$updateOtherRequest = $db->prepare("
 			UPDATE adoptionrequest
 			SET approved = 2
@@ -42,6 +45,7 @@ if(isset($_GET["id"]) && isset($_GET['m']) && isset($_GET['aid']) && isset($_GET
 			'id' => $aid
 		]);
 
+		//Delete admin as owner
 		$deleteOwns = $db->prepare("
 			DELETE FROM owns
 			WHERE animalID = :aid
@@ -51,6 +55,7 @@ if(isset($_GET["id"]) && isset($_GET['m']) && isset($_GET['aid']) && isset($_GET
 			'aid' => $aid
 		]);	
 
+		//Add new owner
 		$insertOwns = $db->prepare("
 			INSERT INTO owns (userID, animalID)
 			VALUES(:userID, :animalID)
@@ -61,6 +66,7 @@ if(isset($_GET["id"]) && isset($_GET['m']) && isset($_GET['aid']) && isset($_GET
 		]);		
 		die("Sucessfully managed request.");
 	} else if($manage == 2) {
+		//Update adoption request to disapproved
 		$updateRequest = $db->prepare("
 			UPDATE adoptionrequest
 			SET approved = 2
@@ -75,7 +81,7 @@ if(isset($_GET["id"]) && isset($_GET['m']) && isset($_GET['aid']) && isset($_GET
 
 	exit();
 }
-
+//Get user and animal columns associated with adoption request
 $requests = $db->query("
 	SELECT *
 	FROM adoptionrequest

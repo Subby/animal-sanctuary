@@ -8,7 +8,7 @@ require 'app/start.php';
 if(isset($_POST["submitted"])) {
 	$animalID = $_POST['id'];
 	$userID = $_SESSION["id"];
-
+	//Check if adoption request already exists
 	$exists = $db->prepare("
 		SELECT * FROM adoptionrequest 
 		WHERE userID = :uid
@@ -27,7 +27,7 @@ if(isset($_POST["submitted"])) {
 		echo "Click <a href=\"index.php\">here</a> to go back to the home page.";
 		exit();
 	}
-
+	//Insert adoption request
 	$insertRequest = $db->prepare("
 		INSERT INTO adoptionrequest (userID, animalID)
 		VALUES(:uid, :aid)
@@ -51,7 +51,7 @@ if(empty($_GET['id'])) {
 } else {
 	$id = $_GET['id'];
 
-
+	//Find the requested animal
 	$animal = $db->prepare("
 		SELECT animalID, name
 		FROM animal

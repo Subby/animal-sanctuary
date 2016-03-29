@@ -68,3 +68,26 @@ table th {
 .red {
 	color: red;
 }
+
+#navbar {
+	width: 100%;
+	float: left;
+	margin: 0 0 1em 0;
+	padding: 0;
+	list-style: none;
+}
+
+#navbar li {
+	float: left; 
+}
+
+#navbar li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	color: #FF0000;
+}
+
+#navbar li a:hover {
+	color: #540000;
+}
