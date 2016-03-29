@@ -7,6 +7,7 @@
 	    });
 </script>
 	<?php if($animals): ?>
+		<h2>Available animals for adoption</h2>
 		<p>Click on the table headers to sort.</p>
 		<table class="center simpleTable">
 			<thead>
