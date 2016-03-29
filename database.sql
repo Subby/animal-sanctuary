@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2016 at 01:46 AM
+-- Generation Time: Mar 29, 2016 at 08:57 PM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -31,9 +31,9 @@ CREATE TABLE IF NOT EXISTS `adoptionrequest` (
   `adoptionID` int(225) NOT NULL AUTO_INCREMENT,
   `userID` int(225) NOT NULL,
   `animalID` int(225) NOT NULL,
-  `approved` tinyint(1) DEFAULT NULL,
+  `approved` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`adoptionID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `animal` (
   `type` varchar(225) NOT NULL,
   `breed` varchar(225) NOT NULL DEFAULT 'N/A',
   PRIMARY KEY (`animalID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(12) NOT NULL,
   `password` varchar(45) NOT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
