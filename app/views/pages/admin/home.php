@@ -64,7 +64,7 @@
 			$age = $date_now->diff($date);
 			?>
 				<tr>					
-					<td><a href="view.php?id=<?php echo $animal['animalID']; ?>"><?php echo escape($animal	['name']); ?></a></td>
+					<td><a href="../view.php?id=<?php echo $animal['animalID']; ?>"><?php echo escape($animal	['name']); ?></a></td>
 					<td data-sort-value="<?php echo $date->format('U')?>"><?php echo $age->format('%y year(s) %m month(s)'); ?></td>
 					<td><?php echo escape($animal['type']); ?></td>
 					<td><?php echo escape($animal['breed']); ?></td>
