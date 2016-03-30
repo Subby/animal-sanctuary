@@ -47,7 +47,7 @@
 			<tbody>
 				<?php foreach($requests_assoc as $request): ?>
 					<tr>
-						<td><a href="view.php?id="<?php echo $request['animalID'];?>><?php echo escape($request['name']);?></a></td>
+						<td><a href="view.php?id=<?php echo $request['animalID'];?>"><?php echo escape($request['name']);?></a></td>
 						<td><?php 
 						if($request['approved'] == 1) {
 							echo "Approved";
